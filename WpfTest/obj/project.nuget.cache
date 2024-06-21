@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "V3+ZLujmXYlc0aE6DR66u4VcZQZe1rSz+Fw58Wvmjh83cQrFQa80VMLuNQGrQE1Cn493Dj/l8zB3GG66KQPEYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\WpfTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sasha\\.nuget\\packages\\wpf-ui\\3.0.4\\wpf-ui.3.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,23 @@
+<Window x:Class="WpfTest.View.CreateProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfTest.View"
+        mc:Ignorable="d"
+        Title="CreateProjectWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Project Name:"/>
+            <TextBox x:Name="ProjectNameTextBox" Margin="0,5,0,10"/>
+
+            <TextBlock Text="GitHub Link:"/>
+            <TextBox x:Name="GitHubLinkTextBox" Margin="0,5,0,10"/>
+
+            <TextBlock Text="Project Description:"/>
+            <TextBox x:Name="ProjectDescriptionTextBox" Margin="0,5,0,10"/>
+
+            <Button Content="Create Project" Click="CreateProjectButton_Click" HorizontalAlignment="Right"/>
+        </StackPanel> 
+    </Grid>
+</Window>
