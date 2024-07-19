@@ -7,11 +7,15 @@
       "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|C:\\Users\\sasha\\source\\repos\\WpfTest\\wpftest\\wpftest.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\wpftest.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|C:\\Users\\sasha\\source\\repos\\WpfTest\\wpftest\\view\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\view\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\view\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|C:\\Users\\sasha\\source\\repos\\WpfTest\\wpftest\\view\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\view\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -26,11 +30,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WpfTest",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\WpfTest.csproj",
+              "RelativeDocumentMoniker": "WpfTest\\WpfTest.csproj",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\WpfTest.csproj",
+              "RelativeToolTip": "WpfTest\\WpfTest.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-19T16:58:57.946Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -46,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\View\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "WpfTest\\View\\MainPage.xaml.cs",
@@ -54,12 +70,11 @@
               "RelativeToolTip": "WpfTest\\View\\MainPage.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T08:37:57.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T08:37:57.685Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LoginView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\View\\LoginView.xaml.cs",
               "RelativeDocumentMoniker": "WpfTest\\View\\LoginView.xaml.cs",
@@ -67,12 +82,11 @@
               "RelativeToolTip": "WpfTest\\View\\LoginView.xaml.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAgwC8AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T18:26:41.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T18:26:41.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\View\\MainPage.xaml",
               "RelativeDocumentMoniker": "WpfTest\\View\\MainPage.xaml",

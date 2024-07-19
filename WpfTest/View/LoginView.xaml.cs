@@ -19,58 +19,73 @@ namespace WpfTest.View
     /// </summary>
     public partial class LoginView : Window
     {
+        private ApplicationContext db;
+        
         public LoginView()
         {
             InitializeComponent();
-        }
-
-        private void Window_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            db = new ApplicationContext();
         }
 
         private void Login_Btn(object sender, RoutedEventArgs e)
         {
-            string username = Login_tb.Text.Trim();
-            string password = Login_pb.Password.Trim();
+            string login = Login_tb.Text.Trim();
+            string pass = Login_pb.Password.Trim();
 
-            if (password.Length < 5) {
+            if (pass.Length < 5)
+            {
                 Login_pb.ToolTip = "Min 5 symbols";
                 Login_pb.Background = Brushes.Pink;
-            } else if (password.Length > 20) {
+            }
+            else if (pass.Length > 20)
+            {
                 Login_pb.ToolTip = "Max 20 symbols";
                 Login_pb.Background = Brushes.Pink;
-            } else if (password.Length == 0) {
+            }
+            else if (pass.Length == 0)
+            {
                 Login_pb.ToolTip = "Input your password";
                 Login_pb.Background = Brushes.Pink;
-            } else if (username.Length == 0) {
+            }
+            else if (pass.Length == 0)
+            {
                 Login_tb.ToolTip = "Input your username";
                 Login_tb.Background = Brushes.Pink;
-            } else {
-                //var user = _context.Users.SingleOrDefault(u => u.Username == username && u.Password == password);
-                //if (user != null)
-                //{
-                //    MainWindow mainWindow = new MainWindow();
-                //    mainWindow.Show();
-                //    this.Close();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Incorrect username or password");
-                //}
-                
+            }
+            else
+            {
+                User authUser = null;
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    authUser = db.Users.Where(b => b.Login == login && b.Pass == pass).FirstOrDefault();
+                }
+
+                if (authUser != null)
+                {
+                    MainPage mainPage = new MainPage();
+                    mainPage.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("incorrect password or login");
+                }
             }
         }
-
+        
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 Login_Btn(sender, e);
             }
+        }
+        
+        private void Register(object sender, RoutedEventArgs e)
+        {
+            RegisterView registerWindow = new RegisterView();
+            registerWindow.Show();
+            this.Close();
         }
     }
 }

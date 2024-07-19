@@ -8,7 +8,6 @@
         Title="LoginPage" Height="450" Width="400"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        MouseDown="Window_MouseDown"
         PreviewKeyDown="Window_PreviewKeyDown">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -36,6 +35,12 @@
                 </Button.Resources>
                 
             </Button>
+            <Button HorizontalAlignment="Center"
+                    Content="Don't have acount?"
+                    Foreground="Gray"
+                    BorderThickness="0"
+                    Click="Register"/>
+            
         </StackPanel>
     </Grid>
 </Window>

@@ -13,30 +13,12 @@
     <Compile Update="View\MainPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Pages\Page1.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\Pages\Page2.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\Pages\Page3.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\Pages\Page1.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\Pages\Page2.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\Pages\Page3.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
