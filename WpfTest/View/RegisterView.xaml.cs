@@ -14,24 +14,16 @@ namespace WpfTest.View
         {
             InitializeComponent();
             db = new ApplicationContext();
-
-            
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            if (e.LeftButton == MouseButtonState.Pressed) DragMove();
         }
 
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
-            {
-                Register_Btn(sender, e);
-            }
+            if (e.Key == Key.Enter) Register_Btn(sender, e);
         }
 
         private void Register_Btn(object sender, RoutedEventArgs e)
@@ -39,38 +31,25 @@ namespace WpfTest.View
             string login = Register_tb.Text.Trim();
             string pass = Register_pb.Password.Trim();
 
-            if (pass.Length < 5)
+            Register_pb.ToolTip = pass.Length < 5 ? "Min 5 symbols" :
+                pass.Length > 20 ? "Max 20 symbols" :
+                string.IsNullOrEmpty(pass) ? "Input your password" : null;
+            Register_pb.Background = pass.Length < 5 || pass.Length > 20 || string.IsNullOrEmpty(pass) ? Brushes.Pink : Brushes.White;
+
+            Register_tb.ToolTip = string.IsNullOrEmpty(login) ? "Input your username" : null;
+            Register_tb.Background = string.IsNullOrEmpty(login) ? Brushes.Pink : Brushes.White;
+
+            if (Register_pb.ToolTip == null && Register_tb.ToolTip == null)
             {
-                Register_pb.ToolTip = "Min 5 symbols";
-                Register_pb.Background = Brushes.Pink;
-            }
-            else if (pass.Length > 20)
-            {
-                Register_pb.ToolTip = "Max 20 symbols";
-                Register_pb.Background = Brushes.Pink;
-            }
-            else if (pass.Length == 0)
-            {
-                Register_pb.ToolTip = "Input your password";
-                Register_pb.Background = Brushes.Pink;
-            }
-            else if (pass.Length == 0)
-            {
-                Register_tb.ToolTip = "Input your username";
-                Register_tb.Background = Brushes.Pink;
-            }
-            else
-            {
-                // Здесь можно добавить логику для регистрации нового пользователя,
-                // например, добавление в базу данных или в файл
+                using (ApplicationContext db = new ApplicationContext())
+                {
+                    User user = new User { Login = login, Pass = pass };
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
 
                 MessageBox.Show("Registration successful!");
                 ClearFields();
-                
-                User user = new User(login, pass);
-                db.Users.Add(user);
-                db.SaveChanges();
-    
             }
         }
 

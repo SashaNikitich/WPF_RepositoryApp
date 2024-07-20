@@ -16,12 +16,15 @@ namespace WpfTest.View
             var createProjectWindow = new CreateProjectWindow();
             if (createProjectWindow.ShowDialog() == true)
             {
-                var projectName = createProjectWindow.ProjectName;
-                var gitHubLink = createProjectWindow.GitHubLink;
-                var projectDescription = createProjectWindow.ProjectDescription;
+                var projectInfo = new ProjectInfo
+                {
+                    ProjectName = createProjectWindow.ProjectName,
+                    GitHubLink = createProjectWindow.GitHubLink,
+                    ProjectDescription = createProjectWindow.ProjectDescription
+                };
 
-                AddNewProjectNavItem(projectName, gitHubLink, projectDescription);
-                NavigateToProjectPage(projectName, gitHubLink, projectDescription);
+                AddNewProjectNavItem(projectInfo);
+                NavigateToProjectPage(projectInfo);
             }
         }
 
@@ -32,22 +35,13 @@ namespace WpfTest.View
             public string ProjectDescription { get; set; }
         }
 
-        private void AddNewProjectNavItem(string projectName, string gitHubLink, string projectDescription)
+        private void AddNewProjectNavItem(ProjectInfo projectInfo)
         {
             var newNavItem = new NavigationViewItem
             {
-                Content = projectName,
-                Tag = new ProjectInfo
-                {
-                    ProjectName = projectName,
-                    GitHubLink = gitHubLink,
-                    ProjectDescription = projectDescription
-                }
-            };
-            
-            newNavItem.Icon = new SymbolIcon
-            {
-                Symbol = SymbolRegular.Archive16
+                Content = projectInfo.ProjectName,
+                Tag = projectInfo,
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Archive16 }
             };
 
             newNavItem.Click += NavigationViewItem_Click;
@@ -58,20 +52,18 @@ namespace WpfTest.View
         {
             if (sender is NavigationViewItem selectedItem && selectedItem.Tag is ProjectInfo projectInfo)
             {
-                NavigateToProjectPage(projectInfo.ProjectName, projectInfo.GitHubLink, projectInfo.ProjectDescription);
+                NavigateToProjectPage(projectInfo);
             }
         }
 
-        private void NavigateToProjectPage(string projectName, string gitHubLink, string projectDescription)
+        private void NavigateToProjectPage(ProjectInfo projectInfo)
         {
-            var project = new Project
+            MainFrame.Content = new ProjectPage(new Project
             {
-                Name = projectName,
-                GitHubLink = gitHubLink,
-                Description = projectDescription
-            };
-
-            MainFrame.Content = new ProjectPage(project);
+                Name = projectInfo.ProjectName,
+                GitHubLink = projectInfo.GitHubLink,
+                Description = projectInfo.ProjectDescription
+            });
         }
     }
 }
