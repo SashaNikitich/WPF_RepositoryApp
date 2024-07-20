@@ -3,7 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\sasha\\source\\repos\\WpfTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|C:\\Users\\sasha\\source\\repos\\WpfTest\\wpftest\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\migrations\\202407201050245_initialcreate2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\migrations\\202407201050245_initialcreate2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\migrations\\202407191719445_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\migrations\\202407191719445_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\migrations\\202407191744192_initialcreate1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\migrations\\202407191744192_initialcreate1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\migrations\\202407191744192_initialcreate1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\migrations\\202407191744192_initialcreate1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\model\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\model\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\migrations\\202407191744192_initialcreate1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\migrations\\202407191744192_initialcreate1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|c:\\users\\sasha\\source\\repos\\wpftest\\wpftest\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{01103D23-6DAA-4181-AC05-A6E2CD884B26}|WpfTest\\WpfTest.csproj|solutionrelative:wpftest\\view\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -30,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,19 +66,108 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "202407201050245_InitialCreate2.cs",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407201050245_InitialCreate2.cs",
+              "RelativeDocumentMoniker": "WpfTest\\Migrations\\202407201050245_InitialCreate2.cs",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407201050245_InitialCreate2.cs",
+              "RelativeToolTip": "WpfTest\\Migrations\\202407201050245_InitialCreate2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T10:50:24.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Model\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "WpfTest\\Model\\ApplicationContext.cs",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Model\\ApplicationContext.cs",
+              "RelativeToolTip": "WpfTest\\Model\\ApplicationContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T10:49:37.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\Configuration.cs",
+              "RelativeDocumentMoniker": "WpfTest\\Migrations\\Configuration.cs",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\Configuration.cs",
+              "RelativeToolTip": "WpfTest\\Migrations\\Configuration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T10:49:11.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "202407191744192_InitialCreate1.resx",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191744192_InitialCreate1.resx",
+              "RelativeDocumentMoniker": "WpfTest\\Migrations\\202407191744192_InitialCreate1.resx",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191744192_InitialCreate1.resx",
+              "RelativeToolTip": "WpfTest\\Migrations\\202407191744192_InitialCreate1.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-07-20T10:49:06.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "202407191744192_InitialCreate1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191744192_InitialCreate1.Designer.cs",
+              "RelativeDocumentMoniker": "WpfTest\\Migrations\\202407191744192_InitialCreate1.Designer.cs",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191744192_InitialCreate1.Designer.cs",
+              "RelativeToolTip": "WpfTest\\Migrations\\202407191744192_InitialCreate1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T10:49:01.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "202407191719445_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191719445_InitialCreate.cs",
+              "RelativeDocumentMoniker": "WpfTest\\Migrations\\202407191719445_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191719445_InitialCreate.cs",
+              "RelativeToolTip": "WpfTest\\Migrations\\202407191719445_InitialCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T10:48:52.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "202407191744192_InitialCreate1.cs",
+              "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191744192_InitialCreate1.cs",
+              "RelativeDocumentMoniker": "WpfTest\\Migrations\\202407191744192_InitialCreate1.cs",
+              "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\Migrations\\202407191744192_InitialCreate1.cs",
+              "RelativeToolTip": "WpfTest\\Migrations\\202407191744192_InitialCreate1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T10:48:51.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "WpfTest",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\WpfTest.csproj",
               "RelativeDocumentMoniker": "WpfTest\\WpfTest.csproj",
               "ToolTip": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\WpfTest.csproj",
               "RelativeToolTip": "WpfTest\\WpfTest.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-19T16:58:57.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-19T16:58:57.946Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\View\\LoginView.xaml",
               "RelativeDocumentMoniker": "WpfTest\\View\\LoginView.xaml",
@@ -62,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\View\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "WpfTest\\View\\MainPage.xaml.cs",
@@ -74,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "LoginView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\View\\LoginView.xaml.cs",
               "RelativeDocumentMoniker": "WpfTest\\View\\LoginView.xaml.cs",
@@ -86,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\sasha\\source\\repos\\WpfTest\\WpfTest\\View\\MainPage.xaml",
               "RelativeDocumentMoniker": "WpfTest\\View\\MainPage.xaml",

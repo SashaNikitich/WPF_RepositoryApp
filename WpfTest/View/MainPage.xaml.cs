@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Controls;
+using System.Linq;
 
 namespace WpfTest.View
 {
@@ -9,6 +10,19 @@ namespace WpfTest.View
         public MainPage()
         {
             InitializeComponent();
+            LoadProjectsFromDatabase();
+        }
+
+        private void LoadProjectsFromDatabase()
+        {
+            using (var db = new ApplicationContext())
+            {
+                var projects = db.Projects.ToList();
+                foreach (var project in projects)
+                {
+                    AddNewProjectNavItem(project);
+                }
+            }
         }
 
         private void CreateProjectButton_Click(object sender, RoutedEventArgs e)
@@ -16,31 +30,30 @@ namespace WpfTest.View
             var createProjectWindow = new CreateProjectWindow();
             if (createProjectWindow.ShowDialog() == true)
             {
-                var projectInfo = new ProjectInfo
+                var project = new Project
                 {
-                    ProjectName = createProjectWindow.ProjectName,
+                    Name = createProjectWindow.ProjectName,
                     GitHubLink = createProjectWindow.GitHubLink,
-                    ProjectDescription = createProjectWindow.ProjectDescription
+                    Description = createProjectWindow.ProjectDescription
                 };
 
-                AddNewProjectNavItem(projectInfo);
-                NavigateToProjectPage(projectInfo);
+                using (var db = new ApplicationContext())
+                {
+                    db.Projects.Add(project);
+                    db.SaveChanges();
+                }
+
+                AddNewProjectNavItem(project);
+                NavigateToProjectPage(project);
             }
         }
 
-        private class ProjectInfo
-        {
-            public string ProjectName { get; set; }
-            public string GitHubLink { get; set; }
-            public string ProjectDescription { get; set; }
-        }
-
-        private void AddNewProjectNavItem(ProjectInfo projectInfo)
+        private void AddNewProjectNavItem(Project project)
         {
             var newNavItem = new NavigationViewItem
             {
-                Content = projectInfo.ProjectName,
-                Tag = projectInfo,
+                Content = project.Name,
+                Tag = project,
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Archive16 }
             };
 
@@ -50,20 +63,15 @@ namespace WpfTest.View
 
         private void NavigationViewItem_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is NavigationViewItem selectedItem && selectedItem.Tag is ProjectInfo projectInfo)
+            if (sender is NavigationViewItem selectedItem && selectedItem.Tag is Project project)
             {
-                NavigateToProjectPage(projectInfo);
+                NavigateToProjectPage(project);
             }
         }
 
-        private void NavigateToProjectPage(ProjectInfo projectInfo)
+        private void NavigateToProjectPage(Project project)
         {
-            MainFrame.Content = new ProjectPage(new Project
-            {
-                Name = projectInfo.ProjectName,
-                GitHubLink = projectInfo.GitHubLink,
-                Description = projectInfo.ProjectDescription
-            });
+            MainFrame.Content = new ProjectPage(project);
         }
     }
 }

@@ -1,10 +1,12 @@
 using System.Data.Entity;
 
-namespace WpfTest.View;
-
-public class ApplicationContext : DbContext
+namespace WpfTest.View
 {
-    public DbSet<User> Users { get; set; }
-    
-    public ApplicationContext() : base("DefaultConnection") {}
+    public class ApplicationContext : DbContext
+    {
+        public DbSet<User> Users { get; set; }
+        public DbSet<Project> Projects { get; set; }
+
+        public ApplicationContext() : base("DefaultConnection") { }
+    }
 }

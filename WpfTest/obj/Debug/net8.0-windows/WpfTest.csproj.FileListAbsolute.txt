@@ -49,3 +49,4 @@ C:\Users\sasha\source\repos\WpfTest\WpfTest\bin\Debug\net8.0-windows\db.db
 C:\Users\sasha\source\repos\WpfTest\WpfTest\obj\Debug\net8.0-windows\WpfTest.Migrations.InitialCreate.resources
 C:\Users\sasha\source\repos\WpfTest\WpfTest\obj\Debug\net8.0-windows\WpfTest.csproj.GenerateResource.cache
 C:\Users\sasha\source\repos\WpfTest\WpfTest\obj\Debug\net8.0-windows\WpfTest.Migrations.InitialCreate1.resources
+C:\Users\sasha\source\repos\WpfTest\WpfTest\obj\Debug\net8.0-windows\WpfTest.Migrations.InitialCreate2.resources
