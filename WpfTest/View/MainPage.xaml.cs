@@ -71,7 +71,23 @@ namespace WpfTest.View
 
         private void NavigateToProjectPage(Project project)
         {
-            MainFrame.Content = new ProjectPage(project);
+            var projectPage = new ProjectPage(project);
+            projectPage.ProjectDeleted += OnProjectDeleted;
+            MainFrame.Content = projectPage;
+        }
+
+        private void OnProjectDeleted(object sender, Project project)
+        {
+            var itemToRemove = ProjectsNavigationView.MenuItems.OfType<NavigationViewItem>()
+                .FirstOrDefault(i => i.Tag == project);
+
+            if (itemToRemove != null)
+            {
+                ProjectsNavigationView.MenuItems.Remove(itemToRemove);
+            }
+
+            // Clear the project page content
+            MainFrame.Content = null;
         }
     }
 }
