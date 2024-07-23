@@ -1,12 +1,14 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Controls;
-using System.Linq;
 
 namespace WpfTest.View
 {
     public partial class MainPage : Window
     {
+        private List<Project> _allProjects; // Store all projects for searching
+
         public MainPage()
         {
             InitializeComponent();
@@ -17,8 +19,8 @@ namespace WpfTest.View
         {
             using (var db = new ApplicationContext())
             {
-                var projects = db.Projects.ToList();
-                foreach (var project in projects)
+                _allProjects = db.Projects.ToList();
+                foreach (var project in _allProjects)
                 {
                     AddNewProjectNavItem(project);
                 }
@@ -43,6 +45,7 @@ namespace WpfTest.View
                     db.SaveChanges();
                 }
 
+                _allProjects.Add(project); // Add new project to the list
                 AddNewProjectNavItem(project);
                 NavigateToProjectPage(project);
             }
@@ -88,6 +91,21 @@ namespace WpfTest.View
 
             // Clear the project page content
             MainFrame.Content = null;
+        }
+
+        private void AutoSuggestBox_TextChanged(object sender, AutoSuggestBoxTextChangedEventArgs e)
+        {
+            var query = AutoSuggestBox.Text?.ToLower();
+            ProjectsNavigationView.MenuItems.Clear();
+
+            var filteredProjects = _allProjects
+                .Where(p => p.Name.ToLower().Contains(query))
+                .ToList();
+
+            foreach (var project in filteredProjects)
+            {
+                AddNewProjectNavItem(project);
+            }
         }
     }
 }
