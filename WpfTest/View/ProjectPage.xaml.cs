@@ -2,6 +2,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
+using System.Windows.Input;
 
 namespace WpfTest.View
 {
@@ -45,6 +46,14 @@ namespace WpfTest.View
                     db.Projects.Remove(projectToRemove);
                     db.SaveChanges();
                 }
+            }
+        }
+
+        private void CopyTextToClipboard(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is TextBlock textBlock)
+            {
+                Clipboard.SetText(textBlock.Text);
             }
         }
     }

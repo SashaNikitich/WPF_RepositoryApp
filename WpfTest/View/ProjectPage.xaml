@@ -5,6 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d"
       d:DesignHeight="*" d:DesignWidth="*">
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="HoverableTextBlock">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Gray"/>
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="10">
@@ -12,7 +25,9 @@
                 <TextBlock Text="{Binding Name}" FontSize="13" Margin="0,5,0,10" TextAlignment="Center" TextWrapping="Wrap"/>
 
                 <TextBlock Text="GitHub Link:" FontSize="17" FontWeight="Bold" TextAlignment="Center"/>
-                <TextBlock Text="{Binding GitHubLink}" FontSize="13" Margin="0,5,0,10" TextAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock Text="{Binding GitHubLink}" FontSize="13" Margin="0,5,0,10" TextAlignment="Center" TextWrapping="Wrap"
+                           MouseLeftButtonUp="CopyTextToClipboard"
+                           Style="{StaticResource HoverableTextBlock}"/>
         
                 <TextBlock Text="Project Description:" FontSize="17" FontWeight="Bold" TextAlignment="Center"/>
                 <TextBlock Text="{Binding Description}" FontSize="13" Margin="0,5,0,10" TextAlignment="Center" TextWrapping="Wrap"/>
@@ -21,7 +36,6 @@
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Click="DeleteProject_Btn">
-                
                 </Button>
             </StackPanel>
         </ScrollViewer>
