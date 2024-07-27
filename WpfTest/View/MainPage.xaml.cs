@@ -45,7 +45,7 @@ namespace WpfTest.View
                     db.SaveChanges();
                 }
 
-                _allProjects.Add(project); // Add new project to the list
+                _allProjects.Add(project);
                 AddNewProjectNavItem(project);
                 NavigateToProjectPage(project);
             }
@@ -79,6 +79,7 @@ namespace WpfTest.View
             MainFrame.Content = projectPage;
         }
 
+        // Delete project func
         private void OnProjectDeleted(object sender, Project project)
         {
             var itemToRemove = ProjectsNavigationView.MenuItems.OfType<NavigationViewItem>()
@@ -91,21 +92,6 @@ namespace WpfTest.View
 
             // Clear the project page content
             MainFrame.Content = null;
-        }
-
-        private void AutoSuggestBox_TextChanged(object sender, AutoSuggestBoxTextChangedEventArgs e)
-        {
-            var query = AutoSuggestBox.Text?.ToLower();
-            ProjectsNavigationView.MenuItems.Clear();
-
-            var filteredProjects = _allProjects
-                .Where(p => p.Name.ToLower().Contains(query))
-                .ToList();
-
-            foreach (var project in filteredProjects)
-            {
-                AddNewProjectNavItem(project);
-            }
         }
     }
 }

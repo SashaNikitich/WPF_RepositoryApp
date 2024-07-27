@@ -14,15 +14,6 @@
         </Grid.ColumnDefinitions>
         
         <ui:NavigationView IsBackButtonVisible="Collapsed" x:Name="ProjectsNavigationView" PaneDisplayMode="Left">
-            <ui:NavigationView.AutoSuggestBox>
-                <ui:AutoSuggestBox x:Name="AutoSuggestBox" PlaceholderText="Search" Margin="0 7" TextChanged="AutoSuggestBox_TextChanged">
-                    <ui:AutoSuggestBox.Icon>
-                        <ui:IconSourceElement>
-                            <ui:SymbolIconSource Symbol="Search24"/>
-                        </ui:IconSourceElement>
-                    </ui:AutoSuggestBox.Icon>
-                </ui:AutoSuggestBox>
-            </ui:NavigationView.AutoSuggestBox>
             <ui:NavigationView.PaneTitle>
                 Projects
             </ui:NavigationView.PaneTitle>

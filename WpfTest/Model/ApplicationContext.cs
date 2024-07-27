@@ -7,6 +7,6 @@ namespace WpfTest.View
         public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
 
-        public ApplicationContext() : base("DefaultConnection") { }
+        public ApplicationContext() : base(Constants.DefaultConnectionString) { }
     }
 }
