@@ -7,7 +7,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f42ced4-19b8-458a-8e46-49a75ef9c92f" name="Changes" comment="Ini" />
+    <list default="true" id="8f42ced4-19b8-458a-8e46-49a75ef9c92f" name="Changes" comment="Ini">
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_c2g20eko_wpftmp.AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_c2g20eko_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_c2g20eko_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_c2g20eko_wpftmp.GlobalUsings.g.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_c2g20eko_wpftmp.assets.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_c2g20eko_wpftmp.sourcelink.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_zabipoqc_wpftmp.AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_zabipoqc_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_zabipoqc_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_zabipoqc_wpftmp.GlobalUsings.g.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_zabipoqc_wpftmp.assets.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_zabipoqc_wpftmp.sourcelink.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/WpfTest_c2g20eko_wpftmp.csproj.nuget.dgspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/WpfTest_c2g20eko_wpftmp.csproj.nuget.g.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/WpfTest_c2g20eko_wpftmp.csproj.nuget.g.targets" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/WpfTest_zabipoqc_wpftmp.csproj.nuget.dgspec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/WpfTest_zabipoqc_wpftmp.csproj.nuget.g.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WpfTest/obj/WpfTest_zabipoqc_wpftmp.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WpfTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WpfTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTest/Model/Project.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WpfTest/Model/Project.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/App.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/View/CreateProjectWindow.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/View/LoginView.baml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_MarkupCompile.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WpfTest/obj/Debug/net8.0-windows/WpfTest_MarkupCompile.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,6 +154,7 @@
       <workItem from="1721844537139" duration="456000" />
       <workItem from="1721845626417" duration="896000" />
       <workItem from="1722071140936" duration="283000" />
+      <workItem from="1722093151847" duration="2742000" />
     </task>
     <task id="LOCAL-00001" summary="Ini">
       <option name="closed" value="true" />
