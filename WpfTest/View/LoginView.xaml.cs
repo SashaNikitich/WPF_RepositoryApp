@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using FluentValidation.Results;
+
+
 
 namespace WpfTest.View
 {
@@ -20,44 +13,64 @@ namespace WpfTest.View
     public partial class LoginView : Window
     {
         private ApplicationContext db;
+        private readonly LoginValidator validator; 
         
         public LoginView()
         {
             InitializeComponent();
             db = new ApplicationContext();
+            validator = new LoginValidator();
         }
 
         private void Login_Btn(object sender, RoutedEventArgs e)
         {
-            string login = Login_tb.Text.Trim();
-            string pass = Login_pb.Password.Trim();
-
-            Login_pb.ToolTip = pass.Length < 5 ? "Min 5 symbols" :
-                pass.Length > 20 ? "Max 20 symbols" :
-                pass.Length == 0 ? "Input your password" : null;
-            Login_pb.Background = pass.Length < 5 || pass.Length > 20 || pass.Length == 0 ? Brushes.Pink : Brushes.White;
-
-            Login_tb.ToolTip = login.Length == 0 ? "Input your username" : null;
-            Login_tb.Background = login.Length == 0 ? Brushes.Pink : Brushes.White;
-
-            if (Login_pb.ToolTip == null && Login_tb.ToolTip == null)
+            var viewModel = new LoginViewModel
             {
-                User authUser = null;
-                using (ApplicationContext db = new ApplicationContext())
-                {
-                    authUser = db.Users.FirstOrDefault(b => b.Login == login && b.Pass == pass);
-                }
+                Login = Login_tb.Text.Trim(),
+                Password = Login_pb.Password.Trim()
+            };
 
-                if (authUser != null)
+            ValidationResult results = validator.Validate(viewModel);
+
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
                 {
-                    MainPage mainPage = new MainPage();
-                    mainPage.Show();
-                    this.Close();
+                    if (failure.PropertyName == nameof(viewModel.Login))
+                    {
+                        Login_tb.ToolTip = failure.ErrorMessage;
+                        Login_tb.Background = Brushes.Pink;
+                    }
+                    else if (failure.PropertyName == nameof(viewModel.Password))
+                    {
+                        Login_pb.ToolTip = failure.ErrorMessage;
+                        Login_pb.Background = Brushes.Pink;
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Incorrect password or login");
-                }
+            }
+            else
+            {
+                Login_tb.ToolTip = null;
+                Login_tb.Background = Brushes.White;
+                Login_pb.ToolTip = null;
+                Login_pb.Background = Brushes.White;
+            }
+
+            User authUser = null;
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                authUser = db.Users.FirstOrDefault(b => b.Login == viewModel.Login && b.Pass == viewModel.Password);
+            }
+
+            if (authUser != null)
+            {
+                MainPage mainPage = new MainPage();
+                mainPage.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect password or login");
             }
         }
         

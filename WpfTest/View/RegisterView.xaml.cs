@@ -1,4 +1,3 @@
-using System.Data.Entity;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
