@@ -1,8 +1,9 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using FluentValidation.Results;
-
+using WpfTest.ViewModel;
 
 
 namespace WpfTest.View
@@ -12,19 +13,19 @@ namespace WpfTest.View
     /// </summary>
     public partial class LoginView : Window
     {
-        private ApplicationContext db;
-        private readonly LoginValidator validator; 
+        ///private ApplicationContext db;
+        ///private readonly LoginValidator validator; 
         
         public LoginView()
         {
             InitializeComponent();
-            db = new ApplicationContext();
-            validator = new LoginValidator();
+
+            DataContext = new LoginViewModel();
         }
 
-        private void Login_Btn(object sender, RoutedEventArgs e)
+        /*private void Login_Btn(object sender, RoutedEventArgs e)
         {
-            var viewModel = new LoginViewModel
+            var viewModel = new RegisterModel
             {
                 Login = Login_tb.Text.Trim(),
                 Password = Login_pb.Password.Trim()
@@ -84,6 +85,6 @@ namespace WpfTest.View
             RegisterView registerWindow = new RegisterView();
             registerWindow.Show();
             this.Close();
-        }
+        }*/
     }
 }

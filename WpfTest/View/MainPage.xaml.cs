@@ -1,18 +1,17 @@
-﻿using System.Linq;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using Wpf.Ui.Controls;
 
 namespace WpfTest.View
 {
-    public partial class MainPage : Window
+    public partial class MainPage
     {
-        private List<Project> _allProjects; // Store all projects for searching
+        private List<Project> _allProjects;
 
         public MainPage()
         {
             InitializeComponent();
             LoadProjectsFromDatabase();
+            
         }
 
         private void LoadProjectsFromDatabase()
@@ -80,7 +79,7 @@ namespace WpfTest.View
         }
 
         // Delete project func
-        private void OnProjectDeleted(object sender, Project project)
+        private void OnProjectDeleted(object? sender, Project project)
         {
             var itemToRemove = ProjectsNavigationView.MenuItems.OfType<NavigationViewItem>()
                 .FirstOrDefault(i => i.Tag == project);

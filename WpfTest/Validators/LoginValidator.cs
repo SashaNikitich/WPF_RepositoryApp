@@ -1,5 +1,5 @@
-namespace WpfTest.View;
 using FluentValidation;
+using WpfTest.ViewModel;
 
 public class LoginValidator : AbstractValidator<LoginViewModel>
 {

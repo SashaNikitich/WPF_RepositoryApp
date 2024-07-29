@@ -1,6 +1,6 @@
-namespace WpfTest.View;
+namespace WpfTest.Model;
 
-public class LoginViewModel
+public abstract class LoginModel
 {
     public string Login { get; set; }
     public string Password { get; set; }
