@@ -1,7 +1,9 @@
 using FluentValidation;
-using WpfTest.ViewModel;
+using WpfTest.Model;
 
-public class LoginValidator : AbstractValidator<LoginViewModel>
+namespace WpfTest.Validators;
+
+public class LoginValidator : AbstractValidator<LoginModel>
 {
     public LoginValidator()
     {
@@ -9,8 +11,6 @@ public class LoginValidator : AbstractValidator<LoginViewModel>
             .NotEmpty().WithMessage("Input your username");
 
         RuleFor(x => x.Password)
-            .NotEmpty().WithMessage("Input your password")
-            .MinimumLength(5).WithMessage("Min 5 symbols")
-            .MaximumLength(20).WithMessage("Max 20 symbols");
+            .NotEmpty().WithMessage("Input your password");
     }
 }

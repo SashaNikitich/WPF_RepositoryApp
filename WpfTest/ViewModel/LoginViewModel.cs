@@ -1,40 +1,38 @@
-﻿using System.Windows.Input;
+﻿using System.ComponentModel;
+using System.Linq;
+using System.Windows;
+using System.Windows.Input;
 using WpfTest.Commands;
+using WpfTest.Model;
+using FluentValidation;
+using FluentValidation.Results;
+using WpfTest.Validators;
 using WpfTest.View;
 
 namespace WpfTest.ViewModel
 {
-    public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel, IDataErrorInfo
     {
         private readonly LoginValidator _loginValidator;
-        private string _login;
-        private string _password;
+        private LoginModel _loginModel;
         private string _loginError;
         private bool _isLoginSuccessful;
 
         public LoginViewModel()
         {
             _loginValidator = new LoginValidator();
-            LoginCommand = new RelayCommand(OnLogin);
+            _loginModel = new LoginModel();
+            LoginCommand = new RelayCommand(OnLogin, CanLogin);
+            RedirectToRegisterPage = new RelayCommand(Redirect);
         }
 
-        public string Login
+        public LoginModel LoginModel
         {
-            get => _login;
+            get => _loginModel;
             set
             {
-                _login = value;
-                OnPropertyChanged("Login");
-            }
-        }
-
-        public string Password
-        {
-            get => _password;
-            set
-            {
-                _password = value;
-                OnPropertyChanged("Password");
+                _loginModel = value;
+                OnPropertyChanged(nameof(LoginModel));
             }
         }
 
@@ -44,7 +42,7 @@ namespace WpfTest.ViewModel
             set
             {
                 _loginError = value;
-                OnPropertyChanged("LoginError");
+                OnPropertyChanged(nameof(LoginError));
             }
         }
 
@@ -54,29 +52,70 @@ namespace WpfTest.ViewModel
             set
             {
                 _isLoginSuccessful = value;
-                OnPropertyChanged("IsLoginSuccessful");
-            }
-        }
-
-        public ICommand LoginCommand { get; }
-
-        private void OnLogin(object parameter)
-        {
-            var results = _loginValidator.Validate(this);
-            if (results.IsValid)
-            {
-                // Simulating a login check
-                if (Login == "admin" && Password == "admin")
-                {
-                    RedirectToMainWindow();
-                }
+                OnPropertyChanged(nameof(IsLoginSuccessful));
             }
         }
         
+        public ICommand LoginCommand { get; }
+        public ICommand RedirectToRegisterPage { get; }
+
+        private void OnLogin(object parameter)
+        {
+            ValidationResult results = _loginValidator.Validate(LoginModel);
+            if (results.IsValid)
+            {
+                // Simulating a login check
+                if (_loginModel.Login == "admin" && _loginModel.Password == "admin")
+                {
+                    IsLoginSuccessful = true;
+                    RedirectToMainWindow();
+                }
+                else
+                {
+                    IsLoginSuccessful = false;
+                    LoginError = "Invalid username or password.";
+                }
+            }
+            else
+            {
+                IsLoginSuccessful = false;
+                LoginError = string.Join(Environment.NewLine, results.Errors.Select(e => e.ErrorMessage));
+            }
+        }
+
+        private bool CanLogin(object parameter)
+        {
+            return !string.IsNullOrEmpty(_loginModel.Login) && !string.IsNullOrEmpty(_loginModel.Password);
+        }
+
         private void RedirectToMainWindow()
         {
-            var mainWindow = new MainPage();
-            mainWindow.Show();
+            MainPage mainPage = new MainPage();
+            mainPage.Show();
+        }
+
+        private void Redirect(object parameter)
+        {
+            RegisterView registerView = new RegisterView();
+            registerView.Show();
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                var firstOrDefault = _loginValidator.Validate(_loginModel).Errors.FirstOrDefault(error => error.PropertyName == columnName);
+                return firstOrDefault != null ? firstOrDefault.ErrorMessage : string.Empty;
+            }
+        }
+
+        public string Error
+        {
+            get
+            {
+                var results = _loginValidator.Validate(_loginModel);
+                return results != null && results.Errors.Any() ? string.Join(Environment.NewLine, results.Errors.Select(x => x.ErrorMessage).ToArray()) : string.Empty;
+            }
         }
     }
 }

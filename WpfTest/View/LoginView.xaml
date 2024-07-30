@@ -14,18 +14,20 @@
             <TextBlock HorizontalAlignment="Center" Text="Login" FontSize="30" FontWeight="Bold" Margin="0,0,0,20" />
             <TextBlock Text="Username"/>
             <Border CornerRadius="7" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" Margin="0 0 0 20">
-                <TextBox Text="{Binding Login,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Background="Transparent"/>
+                <TextBox Text="{Binding LoginModel.Login,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Background="Transparent"/>
             </Border>
             <TextBlock Text="Password"/>
             <Border CornerRadius="7" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" Margin="0 0 0 20">
-                <components:BindablePasswordBox  Password="{Binding Password}" BorderThickness="0" Background="Transparent" />
+                <components:BindablePasswordBox  Password="{Binding LoginModel.Password,  ValidatesOnDataErrors=True}" BorderThickness="0" Background="Transparent" />
             </Border>
+            <TextBlock Text="{Binding LoginError}" Foreground="Red" Margin="5 0 0 0"/>
             <Button Content="Login"
                     Foreground="White"
                     Background="Black"
                     Margin="0,25"
                     Height="35"
                     Width="200"
+                    
                     Command="{Binding LoginCommand}">
 
                 <Button.Resources>
@@ -36,7 +38,7 @@
                 
             </Button>
             <Button HorizontalAlignment="Center"
-                    Content="Don't have acount?"
+                    Content="Don't have account?"
                     Foreground="Gray"
                     BorderThickness="0"/>
             
