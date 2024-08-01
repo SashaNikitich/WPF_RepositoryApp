@@ -1,10 +1,7 @@
 ﻿using System.ComponentModel;
-using System.Linq;
-using System.Windows;
 using System.Windows.Input;
 using WpfTest.Commands;
 using WpfTest.Model;
-using FluentValidation;
 using FluentValidation.Results;
 using WpfTest.Validators;
 using WpfTest.View;

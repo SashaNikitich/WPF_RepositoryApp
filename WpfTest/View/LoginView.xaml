@@ -6,7 +6,7 @@
         xmlns:components="clr-namespace:WpfTest.Components"
         d:DataContext="{d:DesignInstance Type=viewmodel:LoginViewModel}"
         mc:Ignorable="d"
-        Title="LoginPage" Height="450" Width="400"
+        Title="Login" Height="450" Width="400"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -40,7 +40,8 @@
             <Button HorizontalAlignment="Center"
                     Content="Don't have account?"
                     Foreground="Gray"
-                    BorderThickness="0"/>
+                    BorderThickness="0"
+                    Command="{Binding RedirectToRegisterPage}"/>
             
         </StackPanel>
     </Grid>

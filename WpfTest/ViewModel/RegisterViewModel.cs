@@ -1,10 +1,7 @@
 using System.ComponentModel;
-using System.Linq;
-using System.Windows;
 using System.Windows.Input;
 using WpfTest.Commands;
 using WpfTest.Model;
-using FluentValidation;
 using FluentValidation.Results;
 using WpfTest.Validators;
 using WpfTest.View;
@@ -66,7 +63,6 @@ namespace WpfTest.ViewModel
             {
                 // Simulating a login check
                 IsRegisterSuccessful = true;
-                RedirectToMainWindow();
             }
             else
             {
@@ -78,12 +74,6 @@ namespace WpfTest.ViewModel
         private bool CanRegister(object parameter)
         {
             return !string.IsNullOrEmpty(_registerModel.Login) && !string.IsNullOrEmpty(_registerModel.Password);
-        }
-
-        private void RedirectToMainWindow()
-        {
-            MainPage mainPage = new MainPage();
-            mainPage.Show();
         }
 
         private void Redirect(object parameter)

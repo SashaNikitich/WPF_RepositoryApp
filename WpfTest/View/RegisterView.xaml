@@ -6,7 +6,7 @@
         xmlns:components="clr-namespace:WpfTest.Components"
         d:DataContext="{d:DesignInstance Type=viewmodel:RegisterViewModel}"
         mc:Ignorable="d"
-        Title="RegisterPage" Height="450" Width="400"
+        Title="Register" Height="450" Width="400"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     
