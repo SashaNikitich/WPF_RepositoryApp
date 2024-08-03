@@ -2,31 +2,33 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfTest.View"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:viewmodel="clr-namespace:WpfTest.ViewModel"
+        xmlns:components="clr-namespace:WpfTest.Components"
+        d:DataContext="{d:DesignInstance Type=viewmodel:LoginViewModel}"
         mc:Ignorable="d"
-        Title="LoginPage" Height="450" Width="400"
+        Title="Login" Height="450" Width="400"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen"
-        PreviewKeyDown="Window_PreviewKeyDown">
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" Text="Login" FontSize="30" FontWeight="Bold" Margin="0,0,0,20" />
             <TextBlock Text="Username"/>
             <Border CornerRadius="7" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" Margin="0 0 0 20">
-                <TextBox x:Name="Login_tb" BorderThickness="0" Background="Transparent"/>
+                <TextBox Text="{Binding LoginModel.Login,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Background="Transparent"/>
             </Border>
             <TextBlock Text="Password"/>
             <Border CornerRadius="7" BorderBrush="#FFABADB3" BorderThickness="1" VerticalAlignment="Center" Margin="0 0 0 20">
-                <PasswordBox x:Name="Login_pb" BorderThickness="0" Background="Transparent"/>
+                <components:BindablePasswordBox  Password="{Binding LoginModel.Password,  ValidatesOnDataErrors=True}" BorderThickness="0" Background="Transparent" />
             </Border>
+            <TextBlock Text="{Binding LoginError}" Foreground="Red" Margin="5 0 0 0"/>
             <Button Content="Login"
                     Foreground="White"
                     Background="Black"
                     Margin="0,25"
                     Height="35"
                     Width="200"
-                    Click="Login_Btn">
+                    
+                    Command="{Binding LoginCommand}">
 
                 <Button.Resources>
                     <Style TargetType="Border" >
@@ -36,10 +38,10 @@
                 
             </Button>
             <Button HorizontalAlignment="Center"
-                    Content="Don't have acount?"
+                    Content="Don't have account?"
                     Foreground="Gray"
                     BorderThickness="0"
-                    Click="Register"/>
+                    Command="{Binding RedirectToRegisterPage}"/>
             
         </StackPanel>
     </Grid>

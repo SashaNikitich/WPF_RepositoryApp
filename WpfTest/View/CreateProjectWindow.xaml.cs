@@ -2,7 +2,7 @@ using System.Windows;
 
 namespace WpfTest.View
 {
-    public partial class CreateProjectWindow : Window
+    public partial class CreateProjectWindow
     {
         public string ProjectName => ProjectNameTextBox.Text;
         public string GitHubLink => GitHubLinkTextBox.Text;
