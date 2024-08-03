@@ -14,6 +14,7 @@ namespace WpfTest.ViewModel
         private RegisterModel _registerModel;
         private string _registerError;
         private bool _isRegisterSuccessful;
+        public Action CloseAction { get; set; }
 
         public RegisterViewModel()
         {
@@ -61,7 +62,6 @@ namespace WpfTest.ViewModel
             ValidationResult results = _registerValidator.Validate(RegisterModel);
             if (results.IsValid)
             {
-                // Simulating a login check
                 IsRegisterSuccessful = true;
             }
             else
@@ -80,6 +80,7 @@ namespace WpfTest.ViewModel
         {
             LoginView loginView = new LoginView();
             loginView.Show();
+            CloseAction();
         }
 
         public string this[string columnName]

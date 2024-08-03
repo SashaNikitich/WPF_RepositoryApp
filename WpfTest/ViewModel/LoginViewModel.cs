@@ -14,6 +14,7 @@ namespace WpfTest.ViewModel
         private LoginModel _loginModel;
         private string _loginError;
         private bool _isLoginSuccessful;
+        public Action CloseAction { get; set; }
 
         public LoginViewModel()
         {
@@ -55,6 +56,7 @@ namespace WpfTest.ViewModel
         
         public ICommand LoginCommand { get; }
         public ICommand RedirectToRegisterPage { get; }
+        
 
         private void OnLogin(object parameter)
         {
@@ -89,12 +91,14 @@ namespace WpfTest.ViewModel
         {
             MainPage mainPage = new MainPage();
             mainPage.Show();
+            CloseAction();
         }
 
         private void Redirect(object parameter)
         {
             RegisterView registerView = new RegisterView();
             registerView.Show();
+            CloseAction();
         }
 
         public string this[string columnName]

@@ -12,7 +12,10 @@ namespace WpfTest.View
         public LoginView()
         {
             InitializeComponent();
-            DataContext = new LoginViewModel();
+            LoginViewModel vm = new LoginViewModel();
+            this.DataContext = vm;
+            if ( vm.CloseAction == null )
+                vm.CloseAction = new Action(() => this.Close());
         }
     }
 }

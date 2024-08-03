@@ -14,7 +14,10 @@ namespace WpfTest.View
         public RegisterView()
         {
             InitializeComponent();
-            DataContext = new RegisterViewModel();
+            RegisterViewModel vm = new RegisterViewModel();
+            this.DataContext = vm;
+            if ( vm.CloseAction == null )
+                vm.CloseAction = new Action(() => this.Close());
         }
     }
 }
