@@ -110,13 +110,6 @@ namespace WpfTest.ViewModel
             }
         }
 
-        public string Error
-        {
-            get
-            {
-                var results = _loginValidator.Validate(_loginModel);
-                return results != null && results.Errors.Any() ? string.Join(Environment.NewLine, results.Errors.Select(x => x.ErrorMessage).ToArray()) : string.Empty;
-            }
-        }
+        public string Error => throw new NotImplementedException();
     }
 }
