@@ -1,5 +1,4 @@
-﻿using System.Windows.Controls;
-using WpfTest.ViewModel;
+﻿using WpfTest.ViewModel;
 
 namespace WpfTest.View
 {

@@ -1,5 +1,4 @@
 using System.Data.Entity;
-using WpfTest.View;
 
 namespace WpfTest.Model
 {

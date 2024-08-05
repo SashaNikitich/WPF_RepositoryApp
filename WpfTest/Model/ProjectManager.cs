@@ -4,7 +4,7 @@ namespace WpfTest.Model;
 
 public class ProjectManager
 {
-    private static readonly ObservableCollection<Project?> DataBaseProjects = []; 
+    private static readonly ObservableCollection<Project?> DataBaseProjects = [];
 
     public static ObservableCollection<Project> GetProjects()
     {

@@ -1,7 +1,6 @@
 using System.Windows.Input;
 using WpfTest.Commands;
 using WpfTest.Model;
-using WpfTest.View;
 
 namespace WpfTest.ViewModel;
 
@@ -9,7 +8,7 @@ public class CreateProjectWindowViewModel : BaseViewModel
 {
     public ICommand AddProjectCommand { get; }
     public Action CloseAction { get; set; }
-        
+
     private string? _name;
     private string? _gitHubLink;
     private string? _description;

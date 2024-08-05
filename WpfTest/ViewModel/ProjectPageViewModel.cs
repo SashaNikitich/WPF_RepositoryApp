@@ -1,7 +1,5 @@
 using System.Windows.Input;
-using WpfTest.Commands;
 using WpfTest.Model;
-using WpfTest.View;
 
 namespace WpfTest.ViewModel;
 
@@ -15,7 +13,7 @@ public class ProjectPageViewModel : BaseViewModel
     {
         Project = project;
     }
-    
+
     public ICommand DeleteProjectCommand { get; }
 
     private bool CanDeleteProject(object parameter)

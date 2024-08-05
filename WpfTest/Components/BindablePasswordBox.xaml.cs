@@ -7,7 +7,7 @@ namespace WpfTest.Components;
 public partial class BindablePasswordBox : UserControl
 {
     private static bool _isPasswordChanging;
-    
+
     public static readonly DependencyProperty PasswordProperty =
         DependencyProperty.Register("Password", typeof(string), typeof(BindablePasswordBox),
             new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
@@ -22,13 +22,13 @@ public partial class BindablePasswordBox : UserControl
             _isPasswordChanging = false;
         }
     }
-    
+
     public string Password
     {
-        get { return (string)GetValue(PasswordProperty);}
-        set {SetValue(PasswordProperty, value);}
+        get { return (string)GetValue(PasswordProperty); }
+        set { SetValue(PasswordProperty, value); }
     }
-    
+
     public BindablePasswordBox()
     {
         InitializeComponent();
@@ -38,7 +38,7 @@ public partial class BindablePasswordBox : UserControl
     {
         Password = PasswordBox.Password;
     }
-    
+
     private void UpdatePassword()
     {
         if (!_isPasswordChanging)

@@ -53,10 +53,10 @@ namespace WpfTest.ViewModel
                 OnPropertyChanged(nameof(IsLoginSuccessful));
             }
         }
-        
+
         public ICommand LoginCommand { get; }
         public ICommand RedirectToRegisterPage { get; }
-        
+
 
         private void OnLogin(object obj)
         {
