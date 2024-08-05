@@ -1,21 +1,23 @@
+using System.Runtime.InteropServices.JavaScript;
 using System.Windows;
+using WpfTest.ViewModel;
 
 namespace WpfTest.View
 {
     public partial class CreateProjectWindow
     {
-        public string ProjectName => ProjectNameTextBox.Text;
-        public string GitHubLink => GitHubLinkTextBox.Text;
-        public string ProjectDescription => ProjectDescriptionTextBox.Text;
-
+        
         public CreateProjectWindow()
         {
             InitializeComponent();
+            CreateProjectWindowViewModel vm = new CreateProjectWindowViewModel();
+            this.DataContext = vm;
+            if ( vm.CloseAction == null )
+                vm.CloseAction = new Action(this.Close);
         }
-
-        private void CreateProjectButton_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
+        
+        public string? ProjectName => (DataContext as CreateProjectWindowViewModel)?.Name;
+        public string? GitHubLink => (DataContext as CreateProjectWindowViewModel)?.GitHubLink;
+        public string? ProjectDescription => (DataContext as CreateProjectWindowViewModel)?.Description;
     }
 }
