@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MainPage" Height="600" Width="900"
+        xmlns:viewModel="clr-namespace:WpfTest.ViewModel"
+        d:DataContext="{d:DesignInstance Type=viewModel:MainPageViewModel}"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         WindowStartupLocation="CenterScreen">
     <Grid>
@@ -17,11 +19,50 @@
             <ui:NavigationView.PaneTitle>
                 Projects
             </ui:NavigationView.PaneTitle>
-            <ui:NavigationView.MenuItems>
-                <!-- Static or initial items can be added here -->
+            <ui:NavigationView.MenuItems >
+                <ListView ItemsSource="{Binding Projects}" SelectedItem="{Binding SelectedProject}" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Margin" Value="1"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Border Background="{TemplateBinding Background}"
+                                                CornerRadius="5"
+                                                Padding="{TemplateBinding Padding}">
+                                            <ContentPresenter/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="WhiteSmoke"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="WhiteSmoke"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="6" VerticalAlignment="Center">
+                                <ui:SymbolIcon Symbol="Archive16" Margin="0,0,7,0"/>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="14"/>
+                                    <TextBlock Text="{Binding Description}" FontStyle="Italic" FontSize="12" Foreground="Gray"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </ui:NavigationView.MenuItems>
             <ui:NavigationView.FooterMenuItems>
-                <ui:NavigationViewItem Content="Add Project" Click="CreateProjectButton_Click">
+                <ui:NavigationViewItem Content="Add Project" Command="{Binding AddCommand}">
                     <ui:NavigationViewItem.Icon>
                         <ui:SymbolIcon Symbol="NoteAdd16"/>
                     </ui:NavigationViewItem.Icon>
@@ -29,6 +70,6 @@
             </ui:NavigationView.FooterMenuItems>
         </ui:NavigationView>
         
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="1"/>
+        <Frame Content="{Binding SelectedProjectPage}" Grid.Column="1" />
     </Grid>
 </Window>

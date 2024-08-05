@@ -14,8 +14,8 @@ namespace WpfTest.View
             InitializeComponent();
             LoginViewModel vm = new LoginViewModel();
             this.DataContext = vm;
-            if ( vm.CloseAction == null )
-                vm.CloseAction = new Action(() => this.Close());
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(this.Close);
         }
     }
 }

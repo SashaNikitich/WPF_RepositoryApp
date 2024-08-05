@@ -1,6 +1,4 @@
 using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
 using WpfTest.ViewModel;
 
 
@@ -16,7 +14,7 @@ namespace WpfTest.View
             InitializeComponent();
             RegisterViewModel vm = new RegisterViewModel();
             this.DataContext = vm;
-            if ( vm.CloseAction == null )
+            if (vm.CloseAction == null)
                 vm.CloseAction = new Action(() => this.Close());
         }
     }

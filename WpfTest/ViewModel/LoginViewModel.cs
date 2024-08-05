@@ -53,12 +53,12 @@ namespace WpfTest.ViewModel
                 OnPropertyChanged(nameof(IsLoginSuccessful));
             }
         }
-        
+
         public ICommand LoginCommand { get; }
         public ICommand RedirectToRegisterPage { get; }
-        
 
-        private void OnLogin(object parameter)
+
+        private void OnLogin(object obj)
         {
             ValidationResult results = _loginValidator.Validate(LoginModel);
             if (results.IsValid)
@@ -82,7 +82,7 @@ namespace WpfTest.ViewModel
             }
         }
 
-        private bool CanLogin(object parameter)
+        private bool CanLogin(object arg)
         {
             return !string.IsNullOrEmpty(_loginModel.Login) && !string.IsNullOrEmpty(_loginModel.Password);
         }

@@ -3,20 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:viewModel="clr-namespace:WpfTest.ViewModel"
+        d:DataContext="{d:DesignInstance Type=viewModel:CreateProjectWindowViewModel}"
         mc:Ignorable="d"
         Title="CreateProjectWindow" Height="450" Width="800">
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Project Name:"/>
-            <TextBox x:Name="ProjectNameTextBox" Margin="0,5,0,10"/>
+            <TextBox Text="{Binding Name}" Margin="0,5,0,10"/>
 
             <TextBlock Text="GitHub Link:"/>
-            <TextBox x:Name="GitHubLinkTextBox" Margin="0,5,0,10"/>
+            <TextBox Text="{Binding GitHubLink}" Margin="0,5,0,10"/>
 
             <TextBlock Text="Project Description:"/>
-            <TextBox x:Name="ProjectDescriptionTextBox" Margin="0,5,0,10"/>
+            <TextBox Text="{Binding Description}" Margin="0,5,0,10"/>
 
-            <Button Content="Create Project" Click="CreateProjectButton_Click" HorizontalAlignment="Right"/>
+            <Button Content="Create Project" Command="{Binding AddProjectCommand}" HorizontalAlignment="Right"/>
         </StackPanel> 
     </Grid>
 </Window>

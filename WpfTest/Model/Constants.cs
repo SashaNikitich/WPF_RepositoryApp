@@ -1,4 +1,4 @@
-namespace WpfTest.View;
+namespace WpfTest.Model;
 
 public class Constants
 {
